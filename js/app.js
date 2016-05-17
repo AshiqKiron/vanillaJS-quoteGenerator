@@ -21,10 +21,7 @@ var quoteHolder = document.getElementById("quote-holder");
 function sayQuote(){
 	var randomIndex = Math.floor(Math.random() * quotes.length);
 	var randomQuote = quotes[randomIndex];
-	var saying = randomQuote.saying;
-	var author = randomQuote.firstName;
-	var lastName = randomQuote.lastName;
-	console.log(saying, author);
+	
 
 
 	// console.log(randomQuote.saying + " " + randomQuote.firstName + " " + randomQuote.lastName);
@@ -53,10 +50,12 @@ var createQuoteElement = function(quoteString){
 
 //Add quote to list
 var addQuote = function(){
+	var quote = sayQuote();
 
-var quoteElement = createQuoteElement(sayQuote().saying);
-// console.log(quoteElement);
-quoteHolder.appendChild(quoteElement);
+	var quoteElement = createQuoteElement(quote.saying);
+	console.log(quote.lastName);
+
+	quoteHolder.appendChild(quoteElement);
 
 }
 
